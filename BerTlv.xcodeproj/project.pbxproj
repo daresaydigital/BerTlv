@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1ED52B1F3CE22400798E77 /* BerTlvErrorHandlingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1ED52A1F3CE22400798E77 /* BerTlvErrorHandlingTests.m */; };
 		8A4BEB4F198ED6C500707046 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4BEB4E198ED6C500707046 /* Foundation.framework */; };
 		8A4BEB54198ED6C500707046 /* BerTlv.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A4BEB53198ED6C500707046 /* BerTlv.h */; };
 		8A4BEB56198ED6C500707046 /* BerTlv.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4BEB55198ED6C500707046 /* BerTlv.m */; };
@@ -74,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B1ED52A1F3CE22400798E77 /* BerTlvErrorHandlingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BerTlvErrorHandlingTests.m; sourceTree = "<group>"; };
 		4B9E63381E82B31E0051EA01 /* BerTlv.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BerTlv.modulemap; sourceTree = "<group>"; };
 		8A4BEB4B198ED6C500707046 /* libBerTlvStatic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBerTlvStatic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4BEB4E198ED6C500707046 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -220,6 +222,7 @@
 				B2DF60961F8D8EF9A49F457B /* BerTlvParserTests.m */,
 				B2DF6D4ED74F7E2C04459B89 /* BerTlvsTests.m */,
 				B2DF6DFB3D566DBD8B474A49 /* BerTlvBuilderTests.m */,
+				4B1ED52A1F3CE22400798E77 /* BerTlvErrorHandlingTests.m */,
 			);
 			path = BerTlvTests;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				B2DF6803205BF73D8A354DD6 /* BerTagTests.m in Sources */,
 				B2DF6C7F3CEE5CD4444340EC /* HexUtilTests.m in Sources */,
 				B2DF65E3590F35608BF654D3 /* BerTlvParserTests.m in Sources */,
+				4B1ED52B1F3CE22400798E77 /* BerTlvErrorHandlingTests.m in Sources */,
 				B2DF65529F987575E4CEFAC5 /* BerTlvsTests.m in Sources */,
 				B2DF6396CCD74FFB97269FE7 /* BerTlvBuilderTests.m in Sources */,
 			);

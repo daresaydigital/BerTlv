@@ -80,10 +80,8 @@ static uint8_t HEX_BYTE_SKIP = 99;
     }
 
     if(highPassed) {
-        @throw([NSException exceptionWithName:@"EvenException"
-                                       reason:[NSString stringWithFormat:@"Even count of HEX chars. Hex string is %@"
-                                               , aHex]
-                                     userInfo:nil]);
+        NSLog(@"Odd count of HEX chars. Hex string is %@", aHex);
+        return nil;
     }
     // returns immutable
     return [NSData dataWithData:data];

@@ -76,19 +76,23 @@
 }
 
 - (NSString *)hexValue {
-    [self checkPrimitive];
-    return [HexUtil format:value];
+    if ([self checkPrimitive]) {
+        return [HexUtil format:value];
+    } else {
+        return nil;
+    }
 }
 
 - (NSString *)textValue {
     return [[NSString alloc] initWithData:self.value encoding:NSASCIIStringEncoding];
 }
 
-- (void)checkPrimitive {
+- (BOOL)checkPrimitive {
     if(constructed) {
-        @throw([NSException exceptionWithName:@"NotPrimitiveTagException"
-                                       reason:[NSString stringWithFormat:@"Tag %@ is constructed", tag]
-                                     userInfo:nil]);
+        NSLog(@"Tag %@ is constructed", tag);
+        return false;
+    } else {
+        return true;
     }
 }
 

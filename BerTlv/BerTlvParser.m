@@ -28,25 +28,31 @@ static int IS_DEBUG_ENABLED = 0;
 }
 
 - (BerTlvs *)parseTlvs:(NSData *)aData numberOfTags:(NSUInteger) numberOfTags {
-    if(aData.length==0) {
-        return [[BerTlvs alloc] init:[[NSArray alloc] init]];
-    }
-
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    int offset = 0;
-    for(uint i=0; i<numberOfTags; i++) {
-        uint result=0;
-        BerTlv * ret = [self parseWithResult:&result data:aData offset:offset len:(uint)aData.length-offset level:0];
-        [list addObject:ret];
-
-        if (result >= aData.length) {
-            break;
+    @try {
+        if(aData.length==0) {
+            return [[BerTlvs alloc] init:[[NSArray alloc] init]];
         }
 
-        offset = result;
-    }
+        NSMutableArray *list = [[NSMutableArray alloc] init];
+        int offset = 0;
+        for(uint i=0; i<numberOfTags; i++) {
+            uint result=0;
+            BerTlv * ret = [self parseWithResult:&result data:aData offset:offset len:(uint)aData.length-offset level:0];
+            [list addObject:ret];
 
-    return [[BerTlvs alloc] init:list];
+            if (result >= aData.length) {
+                break;
+            }
+
+            offset = result;
+        }
+
+        return [[BerTlvs alloc] init:list];
+    }
+    @catch (NSException *e) {
+        NSLog(@"Parsing failed, %@", e.name);
+        return nil;
+    }
 }
 
 - (BerTlv *)parseWithResult:(uint*)aOutResult
