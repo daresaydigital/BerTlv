@@ -19,8 +19,14 @@ static int IS_DEBUG_ENABLED = 0;
 }
 - (BerTlv *)parseConstructed:(NSData *)aData {
     uint result=0;
-    BerTlv * ret = [self parseWithResult:&result data:aData offset:0 len:(uint)aData.length level:0];
-    return ret;
+    @try {
+        BerTlv * ret = [self parseWithResult:&result data:aData offset:0 len:(uint)aData.length level:0];
+        return ret;
+    }
+    @catch (NSException *e) {
+        NSLog(@"Parsing failed, %@", e.name);
+        return nil;
+    }
 }
 
 - (BerTlvs *)parseTlvs:(NSData *)aData {
